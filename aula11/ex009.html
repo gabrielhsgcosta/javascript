@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        div#nacionalidade {
+            background-color: gray;
+            position: absolute;
+            text-align: center;
+            padding: 15px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 300px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.374);
+        }
+
+        h1{
+            background-color: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        p, #verificar {
+            background-color: lightgray;
+            margin: auto;
+            margin-bottom: 5px;
+            width: 350px;
+            font-size: 1em;
+            border: none;
+            border-radius: 2px
+        }
+
+        input {
+            background-color: white;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 5px;
+            width: 350px;
+            font-size: 1em;
+            border: none;
+            border-radius: 2px
+        }
+    </style>
+</head>
+<body>
+    <div id="nacionalidade">
+        <h1>Sistema de Nacionalidade</h1>
+        <p>Qual país você vive?</p>
+        <input type="text" name="txtvive" id="txtvive" autocomplete="off">
+        <p>Qual seu país de origem?</p>
+        <input type="text" name="txtorigem" id="txtorigem" autocomplete="off">
+        <br>
+        <input type="button" value="Verificar" id="verificar" onclick=" verificando()">
+        <div id="res"></div>
+    </div>
+
+    <script>
+        function verificando() {
+            var vive = window.document.querySelector('input#txtvive').value
+            var origem = window.document.querySelector('input#txtorigem').value
+            var res = window.document.querySelector('div#res')
+
+            res.innerHTML = `<p>Você vive em <strong>${vive}</strong> tendo origem de <strong>${origem}</strong>.</p>`
+           if (vive.toLowerCase() == origem.toLowerCase()) {
+                res.innerHTML += `<p>Portanto, você é natural de <strong>${origem}</strong>.</p>`
+            } else {
+                res.innerHTML += `Portanto, você é <strong>ESTRANGEIRO(A)</strong>!`
+            }
+        }
+    </script>
+</body>
+</html>
