@@ -19,8 +19,8 @@ header {
 
 div#conteudo {
     background-color: gray;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     border-radius: 10px;
     margin: auto;
     box-shadow: 1px 1px 5px #00000061
@@ -33,12 +33,18 @@ div#conteudo > div#txt {
     color: white;
 }
 
-div#conteudo > div#img > img#imagem {
+div#conteudo > div#img {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#conteudo > div#img > img#imagem {
     border-radius: 50%;
     border: 3px solid darkgray;
     box-shadow: 1px 1px 5px #00000061;
-    place-self: center;
+    max-width: 100%;
+    height: auto;
 }
 
 footer a {
