@@ -41,12 +41,11 @@ div#conteudo > div#img > img#imagem {
     place-self: center;
 }
 
-footer > p {
+footer a {
     text-align: center;
     padding: 10px;
     font-weight: bolder;
     font-size: 1.3em;
     color: white;
+    text-decoration: none;
 }
-
-
